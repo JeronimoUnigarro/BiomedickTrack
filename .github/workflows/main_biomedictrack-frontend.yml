@@ -46,9 +46,16 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9FB90D7CEA9D40B6B7C5CF326ADB32B5 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3548C14360F4438ABD36F4412981C4CA }}
 
+      - name: Stop Azure Web App
+        run: az webapp stop --name biomedictrack-frontend --resource-group biomedictrack-frontend_group
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: biomedictrack-frontend
           slot-name: Production
           package: frontend-app.zip
+
+      - name: Start Azure Web App
+        if: always()
+        run: az webapp start --name biomedictrack-frontend --resource-group biomedictrack-frontend_group
