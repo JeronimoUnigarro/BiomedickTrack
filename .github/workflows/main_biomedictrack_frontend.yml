@@ -29,13 +29,17 @@ jobs:
           chmod +x node_modules/.bin/vite
           npx vite build
 
+      - name: Prepare frontend artifact
+        run: |
+          mkdir -p artifact
+          cp -R frontend/. artifact/
+          rm -rf artifact/node_modules
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: frontend-app
-          path: |
-            frontend
-            !frontend/node_modules/.cache
+          path: artifact
 
   deploy:
     runs-on: ubuntu-latest
@@ -49,7 +53,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: frontend-app
-          path: frontend
+          path: artifact
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -63,4 +67,4 @@ jobs:
         with:
           app-name: biomedictrack-frontend
           slot-name: Production
-          package: frontend
+          package: artifact
