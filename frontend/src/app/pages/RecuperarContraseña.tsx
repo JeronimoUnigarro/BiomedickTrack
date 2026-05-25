@@ -72,9 +72,9 @@ export default function RecuperarContraseña() {
           {token && !resetDone ? (
             <>
               <div className="mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Nueva ContraseÃ±a</h2>
+                <h2 className="text-2xl font-bold text-gray-900">Nueva Contraseña</h2>
                 <p className="text-gray-600 mt-1">
-                  Ingresa una nueva contrasena para tu cuenta.
+                  Ingresa una nueva contraseña para tu cuenta.
                 </p>
               </div>
 
@@ -99,7 +99,7 @@ export default function RecuperarContraseña() {
 
                 <div>
                   <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
-                    Confirmar Contrasena
+                    Confirmar Contraseña
                   </label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -128,7 +128,7 @@ export default function RecuperarContraseña() {
                   ) : (
                     <>
                       <Lock className="w-5 h-5" />
-                      Actualizar Contrasena
+                      Actualizar Contraseña
                     </>
                   )}
                 </button>
@@ -139,9 +139,9 @@ export default function RecuperarContraseña() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
                 <CheckCircle className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Contrasena Actualizada</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Contraseña Actualizada</h3>
               <p className="text-gray-600 mb-6">
-                Ya puedes iniciar sesion con tu nueva contrasena.
+                Ya puedes iniciar sesion con tu nueva contraseña.
               </p>
             </div>
           ) : !sent ? (
