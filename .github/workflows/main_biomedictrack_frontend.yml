@@ -65,6 +65,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: biomedictrack-frontend
+          app-name: biomedictrack-frontend-e8dkfpgrecfmh9fv
           slot-name: Production
           package: artifact
