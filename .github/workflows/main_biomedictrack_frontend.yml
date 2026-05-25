@@ -25,8 +25,9 @@ jobs:
         env:
           VITE_API_URL: https://biomedictrack-hwedf8cag6dbc2db.eastus-01.azurewebsites.net/api
         run: |
-          npm install
-          npm run build
+          npm ci
+          chmod +x node_modules/.bin/vite
+          npx vite build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
