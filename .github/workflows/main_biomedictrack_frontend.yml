@@ -46,7 +46,7 @@ jobs:
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_ADC6CBBFEDDF4EB6BB05326830AC2299 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BB207E8AA6A848ADB0CD198D8B1ECD7E }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8B0D9352A6754D27A14F6F92426104F5 }}
+          subscription-id: 4c556007-fda2-4801-9cd3-651212eeab6a
 
       - name: Show visible Azure Web Apps
         run: |
